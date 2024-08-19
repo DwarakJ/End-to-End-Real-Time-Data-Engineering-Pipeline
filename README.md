@@ -1,3 +1,6 @@
+This project is an extension of https://github.com/simardeep1792/Data-Engineering-Streaming-Project.
+Thanks to Simardeep Singh for the original project.
+
 # Data-Engineering-Streaming-Project
 ## Introduction: Building a Dynamic Data Engineering Project
 
