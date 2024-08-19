@@ -1,8 +1,10 @@
 # Importing required modules
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
-from kafka_streaming_service import initiate_stream  
+from airflow.operators.python import PythonOperator
+from airflow.providers.docker.operators.docker import DockerOperator
+from kafka_streaming_service import initiate_stream
+
 # Configuration for the DAG's start date
 DAG_START_DATE = datetime(2018, 12, 21, 12, 12)
 
@@ -18,7 +20,7 @@ DAG_DEFAULT_ARGS = {
 with DAG(
     'name_stream_dag',  # Renamed for uniqueness
     default_args=DAG_DEFAULT_ARGS,
-    schedule_interval='0 1 * * *',
+    schedule='* * * * *',
     catchup=False,
     description='Stream random names to Kafka topic',
     max_active_runs=1

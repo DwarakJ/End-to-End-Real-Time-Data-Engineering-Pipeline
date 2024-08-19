@@ -66,4 +66,5 @@ def initiate_stream():
         time.sleep(PAUSE_INTERVAL)
 
 if __name__ == "__main__":
+    print("Hey! I am the Kafka streaming service.")
     initiate_stream()
